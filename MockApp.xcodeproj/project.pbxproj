@@ -38,6 +38,8 @@
 		908AF20723C8A48600DE483E /* MockAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		908AF20B23C8A48600DE483E /* MockAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAppTests.swift; sourceTree = "<group>"; };
 		908AF20D23C8A48600DE483E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		908AF21923C90D9900DE483E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		908AF21A23C90DA200DE483E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,8 @@
 		908AF1E823C8A48200DE483E = {
 			isa = PBXGroup;
 			children = (
+				908AF21923C90D9900DE483E /* README.md */,
+				908AF21A23C90DA200DE483E /* .swiftlint.yml */,
 				908AF1F323C8A48200DE483E /* MockApp */,
 				908AF20A23C8A48600DE483E /* MockAppTests */,
 				908AF1F223C8A48200DE483E /* Products */,
@@ -133,6 +137,7 @@
 				908AF1ED23C8A48200DE483E /* Sources */,
 				908AF1EE23C8A48200DE483E /* Frameworks */,
 				908AF1EF23C8A48200DE483E /* Resources */,
+				908AF21823C90CB000DE483E /* Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -219,6 +224,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		908AF21823C90CB000DE483E /* Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		908AF1ED23C8A48200DE483E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -304,6 +330,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -317,6 +344,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 			};
 			name = Debug;
 		};
@@ -358,6 +386,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -370,6 +399,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
