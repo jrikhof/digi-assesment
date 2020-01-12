@@ -15,10 +15,12 @@ final class MockItemList: ObservableObject {
     
     @Published private(set) var isLoading: Bool = false
     
+    private let mockItemStorage: MockItemStorage
     private let mockItemService: MockItemService
     private var isInitialLoad: Bool = true
     
-    init(mockItemService: MockItemService) {
+    init(mockItemStorage: MockItemStorage, mockItemService: MockItemService) {
+        self.mockItemStorage = mockItemStorage
         self.mockItemService = mockItemService
         
         items = []
@@ -27,6 +29,14 @@ final class MockItemList: ObservableObject {
     // MARK: - Load Items
     
     func loadItems() {
+        items = mockItemStorage.loadItems()
+        
+        if items.isEmpty {
+            loadOnlineItems()
+        }
+    }
+    
+    private func loadOnlineItems() {
         error = nil
         mockItemService.fetchMockItems { [weak self] result in
             DispatchQueue.main.async {
@@ -39,6 +49,7 @@ final class MockItemList: ObservableObject {
         switch result {
         case .success(let items):
             self.items = items
+            mockItemStorage.store(items: items)
         case .failure(let error):
             self.error = error
         }

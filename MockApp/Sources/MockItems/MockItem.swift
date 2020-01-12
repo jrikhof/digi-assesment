@@ -30,7 +30,7 @@ struct MockItem: Identifiable {
     }
 }
 
-extension MockItem: Decodable {
+extension MockItem: Codable {
     
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -39,4 +39,13 @@ extension MockItem: Decodable {
         confidence = try values.decode(Double.self, forKey: .confidence)
         img = try values.decode(String.self, forKey: .img)
     }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(id, forKey: .id)
+        try container.encode(text, forKey: .text)
+        try container.encode(confidence, forKey: .confidence)
+        try container.encode(img, forKey: .img)
+    }
 }
+

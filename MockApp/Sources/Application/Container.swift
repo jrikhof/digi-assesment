@@ -15,6 +15,7 @@ extension MockItemList {
     class func resolve() -> MockItemList {
         let httpClient = NetworkSessionHTTPClient(networkSession: URLSession.shared)
         let service = HttpMockItemService(httpClient: httpClient)
-        return MockItemList(mockItemService: service)
+        return MockItemList(mockItemStorage: DefaultMockItemStorage(),
+                            mockItemService: service)
     }
 }

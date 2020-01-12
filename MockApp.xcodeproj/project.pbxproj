@@ -33,6 +33,7 @@
 		908AF24423CB292900DE483E /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24323CB292900DE483E /* UIColor+Theme.swift */; };
 		908AF24923CB3DC500DE483E /* RandomAccessCollection+LastItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24823CB3DC500DE483E /* RandomAccessCollection+LastItem.swift */; };
 		908AF24B23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24A23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift */; };
+		908AF24D23CBA87100DE483E /* MockItemStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24C23CBA87100DE483E /* MockItemStorage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		908AF24323CB292900DE483E /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		908AF24823CB3DC500DE483E /* RandomAccessCollection+LastItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+LastItem.swift"; sourceTree = "<group>"; };
 		908AF24A23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+FirstItem.swift"; sourceTree = "<group>"; };
+		908AF24C23CBA87100DE483E /* MockItemStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemStorage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,12 +206,13 @@
 		908AF23223C9B05000DE483E /* MockItems */ = {
 			isa = PBXGroup;
 			children = (
+				908AF23D23CB1D7C00DE483E /* HttpMockItemService.swift */,
 				908AF21D23C927F800DE483E /* MockItem.swift */,
 				908AF23923CB159700DE483E /* MockItemList.swift */,
 				908AF23323C9B06700DE483E /* MockItemService.swift */,
+				908AF24C23CBA87100DE483E /* MockItemStorage.swift */,
 				908AF1F823C8A48200DE483E /* MockItemsView.swift */,
 				908AF21B23C91F4900DE483E /* MockItemView.swift */,
-				908AF23D23CB1D7C00DE483E /* HttpMockItemService.swift */,
 				908AF23F23CB1D9300DE483E /* NoDataError.swift */,
 			);
 			path = MockItems;
@@ -361,6 +364,7 @@
 				908AF21C23C91F4900DE483E /* MockItemView.swift in Sources */,
 				908AF1F723C8A48200DE483E /* SceneDelegate.swift in Sources */,
 				908AF24423CB292900DE483E /* UIColor+Theme.swift in Sources */,
+				908AF24D23CBA87100DE483E /* MockItemStorage.swift in Sources */,
 				908AF22F23C9AF1300DE483E /* HttpOptions.swift in Sources */,
 				908AF22523C9343400DE483E /* HttpClient.swift in Sources */,
 				908AF22923C9345500DE483E /* NetworkSessionHTTPClient.swift in Sources */,
