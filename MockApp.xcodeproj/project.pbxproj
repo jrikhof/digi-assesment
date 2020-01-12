@@ -32,6 +32,7 @@
 		908AF24223CB200100DE483E /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24123CB200100DE483E /* Container.swift */; };
 		908AF24423CB292900DE483E /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24323CB292900DE483E /* UIColor+Theme.swift */; };
 		908AF24923CB3DC500DE483E /* RandomAccessCollection+LastItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24823CB3DC500DE483E /* RandomAccessCollection+LastItem.swift */; };
+		908AF24B23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24A23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		908AF24123CB200100DE483E /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		908AF24323CB292900DE483E /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
 		908AF24823CB3DC500DE483E /* RandomAccessCollection+LastItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+LastItem.swift"; sourceTree = "<group>"; };
+		908AF24A23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+FirstItem.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				908AF24823CB3DC500DE483E /* RandomAccessCollection+LastItem.swift */,
+				908AF24A23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				908AF24023CB1D9300DE483E /* NoDataError.swift in Sources */,
 				908AF1F523C8A48200DE483E /* AppDelegate.swift in Sources */,
 				908AF24223CB200100DE483E /* Container.swift in Sources */,
+				908AF24B23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift in Sources */,
 				908AF21E23C927F800DE483E /* MockItem.swift in Sources */,
 				908AF24923CB3DC500DE483E /* RandomAccessCollection+LastItem.swift in Sources */,
 				908AF21C23C91F4900DE483E /* MockItemView.swift in Sources */,

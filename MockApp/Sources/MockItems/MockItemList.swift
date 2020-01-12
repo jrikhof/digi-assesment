@@ -16,6 +16,7 @@ final class MockItemList: ObservableObject {
     @Published private(set) var isLoading: Bool = false
     
     private let mockItemService: MockItemService
+    private var isInitialLoad: Bool = true
     
     init(mockItemService: MockItemService) {
         self.mockItemService = mockItemService
@@ -26,16 +27,10 @@ final class MockItemList: ObservableObject {
     // MARK: - Load Items
     
     func loadItems() {
-        guard !isLoading else {
-            return
-        }
-        
-        self.error = nil
-        isLoading = true
+        error = nil
         mockItemService.fetchMockItems { [weak self] result in
             DispatchQueue.main.async {
                 self?.handleInitialResult(result)
-                self?.isLoading = false
             }
         }
     }
@@ -52,6 +47,9 @@ final class MockItemList: ObservableObject {
     // MARK: - Item Appears
     
     func itemAppears(_ item: MockItem) {
+        if items.isFirstItem(item) {
+            loadNewItems(sinceId: item.id)
+        }
         if items.isLastItem(item) {
             loadNextItems(maxId: item.id)
         }
@@ -60,16 +58,10 @@ final class MockItemList: ObservableObject {
     // MARK: - Load Next Items
     
     private func loadNextItems(maxId: String) {
-        guard !isLoading else {
-            return
-        }
-        
         self.error = nil
-        isLoading = true
         mockItemService.fetchMockItems(maxId: maxId) { [weak self] result in
             DispatchQueue.main.async {
                 self?.handleNextResult(result)
-                self?.isLoading = false
             }
         }
     }
@@ -78,6 +70,35 @@ final class MockItemList: ObservableObject {
         switch result {
         case .success(let items):
             self.items.append(contentsOf: items)
+        case .failure(let error):
+            self.error = error
+        }
+    }
+    
+    // MARK: - Load new Items
+    
+    private func loadNewItems(sinceId: String) {
+        guard !isLoading && !isInitialLoad else {
+            // We need to prevent new items is fetched on initial load
+            isInitialLoad = false
+            return
+        }
+        
+        error = nil
+        isLoading = true
+        mockItemService.fetchMockItems(sinceId: sinceId) { [weak self] result in
+            // Add a little delay so the loading indicator is visible
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self?.handleNewResult(result)
+                self?.isLoading = false
+            }
+        }
+    }
+    
+    private func handleNewResult(_ result: Result<MockItems, Error>) {
+        switch result {
+        case .success(let items):
+            self.items.insert(contentsOf: items, at: 0)
         case .failure(let error):
             self.error = error
         }

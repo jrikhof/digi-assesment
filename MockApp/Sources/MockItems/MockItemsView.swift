@@ -17,12 +17,12 @@ struct MockItemsView: View {
             NavigationView {
                 List(self.itemList.items) { item in
                     VStack(alignment: HorizontalAlignment.leading) {
-                        MockItemView(item: .constant(item))
-                        
-                        if self.itemList.isLoading && self.itemList.items.isLastItem(item) {
-                            Divider()
+                        if self.itemList.isLoading && self.itemList.items.isFirstItem(item) {
                             Text("Loading..")
+                            Divider()
                         }
+                        
+                        MockItemView(item: .constant(item))
                     }.onAppear {
                         self.itemList.itemAppears(item)
                     }

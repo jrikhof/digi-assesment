@@ -14,8 +14,8 @@ function_body_length:
 - 20 # error
 
 file_length:
-- 100 # warning
-- 150 # error
+- 150 # warning
+- 200 # error
 
 large_tuple: # warn user when using 3 values in tuple, give error if there are 4
 - 3
