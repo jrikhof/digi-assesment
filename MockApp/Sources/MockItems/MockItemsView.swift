@@ -18,6 +18,13 @@ struct MockItemsView: View {
                 List(self.itemList.items) { item in
                     VStack(alignment: HorizontalAlignment.leading) {
                         MockItemView(item: .constant(item))
+                        
+                        if self.itemList.isLoading && self.itemList.items.isLastItem(item) {
+                            Divider()
+                            Text("Loading..")
+                        }
+                    }.onAppear {
+                        self.itemList.itemAppears(item)
                     }
                 }
                 .navigationBarTitle("List of items")

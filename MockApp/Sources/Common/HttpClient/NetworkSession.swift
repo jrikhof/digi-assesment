@@ -25,8 +25,9 @@ extension URLSession: NetworkSession {
             if let httpResponse = response as? HTTPURLResponse {
                 completionHandler(HttpResponse(data: data,
                                                headers: httpResponse.allHeaderFields))
+            } else {
+                completionHandler(HttpResponse(data: data))
             }
-            completionHandler(HttpResponse(data: data))
         }.resume()
     }
 }

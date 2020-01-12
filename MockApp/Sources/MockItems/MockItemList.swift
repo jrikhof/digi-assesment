@@ -23,6 +23,8 @@ final class MockItemList: ObservableObject {
         items = []
     }
     
+    // MARK: - Load Items
+    
     func loadItems() {
         guard !isLoading else {
             return
@@ -42,6 +44,40 @@ final class MockItemList: ObservableObject {
         switch result {
         case .success(let items):
             self.items = items
+        case .failure(let error):
+            self.error = error
+        }
+    }
+    
+    // MARK: - Item Appears
+    
+    func itemAppears(_ item: MockItem) {
+        if items.isLastItem(item) {
+            loadNextItems(maxId: item.id)
+        }
+    }
+    
+    // MARK: - Load Next Items
+    
+    private func loadNextItems(maxId: String) {
+        guard !isLoading else {
+            return
+        }
+        
+        self.error = nil
+        isLoading = true
+        mockItemService.fetchMockItems(maxId: maxId) { [weak self] result in
+            DispatchQueue.main.async {
+                self?.handleNextResult(result)
+                self?.isLoading = false
+            }
+        }
+    }
+    
+    private func handleNextResult(_ result: Result<MockItems, Error>) {
+        switch result {
+        case .success(let items):
+            self.items.append(contentsOf: items)
         case .failure(let error):
             self.error = error
         }

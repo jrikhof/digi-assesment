@@ -31,6 +31,7 @@
 		908AF24023CB1D9300DE483E /* NoDataError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF23F23CB1D9300DE483E /* NoDataError.swift */; };
 		908AF24223CB200100DE483E /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24123CB200100DE483E /* Container.swift */; };
 		908AF24423CB292900DE483E /* UIColor+Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24323CB292900DE483E /* UIColor+Theme.swift */; };
+		908AF24923CB3DC500DE483E /* RandomAccessCollection+LastItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24823CB3DC500DE483E /* RandomAccessCollection+LastItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		908AF23F23CB1D9300DE483E /* NoDataError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataError.swift; sourceTree = "<group>"; };
 		908AF24123CB200100DE483E /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		908AF24323CB292900DE483E /* UIColor+Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Theme.swift"; sourceTree = "<group>"; };
+		908AF24823CB3DC500DE483E /* RandomAccessCollection+LastItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+LastItem.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			children = (
 				908AF22123C9333200DE483E /* Application */,
 				908AF22223C9341100DE483E /* Common */,
+				908AF24523CB3D8900DE483E /* Extensions */,
 				908AF23223C9B05000DE483E /* MockItems */,
 			);
 			path = Sources;
@@ -208,6 +211,14 @@
 				908AF23F23CB1D9300DE483E /* NoDataError.swift */,
 			);
 			path = MockItems;
+			sourceTree = "<group>";
+		};
+		908AF24523CB3D8900DE483E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				908AF24823CB3DC500DE483E /* RandomAccessCollection+LastItem.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +353,7 @@
 				908AF1F523C8A48200DE483E /* AppDelegate.swift in Sources */,
 				908AF24223CB200100DE483E /* Container.swift in Sources */,
 				908AF21E23C927F800DE483E /* MockItem.swift in Sources */,
+				908AF24923CB3DC500DE483E /* RandomAccessCollection+LastItem.swift in Sources */,
 				908AF21C23C91F4900DE483E /* MockItemView.swift in Sources */,
 				908AF1F723C8A48200DE483E /* SceneDelegate.swift in Sources */,
 				908AF24423CB292900DE483E /* UIColor+Theme.swift in Sources */,
