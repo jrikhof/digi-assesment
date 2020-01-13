@@ -34,6 +34,12 @@
 		908AF24923CB3DC500DE483E /* RandomAccessCollection+LastItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24823CB3DC500DE483E /* RandomAccessCollection+LastItem.swift */; };
 		908AF24B23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24A23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift */; };
 		908AF24D23CBA87100DE483E /* MockItemStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24C23CBA87100DE483E /* MockItemStorage.swift */; };
+		908AF24F23CBB68B00DE483E /* PinningDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF24E23CBB68B00DE483E /* PinningDelegate.swift */; };
+		908AF25323CBB8ED00DE483E /* marlove.cer in Resources */ = {isa = PBXBuildFile; fileRef = 908AF25223CBB8ED00DE483E /* marlove.cer */; };
+		908AF25523CC55D300DE483E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF25423CC55D300DE483E /* ErrorView.swift */; };
+		908AF25723CC5D1F00DE483E /* MockItemListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF25623CC5D1F00DE483E /* MockItemListTests.swift */; };
+		908AF25A23CC5D9600DE483E /* MockItemStorageMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF25923CC5D9600DE483E /* MockItemStorageMock.swift */; };
+		908AF25C23CC5E1000DE483E /* MockItemServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 908AF25B23CC5E1000DE483E /* MockItemServiceMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +86,12 @@
 		908AF24823CB3DC500DE483E /* RandomAccessCollection+LastItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+LastItem.swift"; sourceTree = "<group>"; };
 		908AF24A23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RandomAccessCollection+FirstItem.swift"; sourceTree = "<group>"; };
 		908AF24C23CBA87100DE483E /* MockItemStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemStorage.swift; sourceTree = "<group>"; };
+		908AF24E23CBB68B00DE483E /* PinningDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinningDelegate.swift; sourceTree = "<group>"; };
+		908AF25223CBB8ED00DE483E /* marlove.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = marlove.cer; sourceTree = "<group>"; };
+		908AF25423CC55D300DE483E /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		908AF25623CC5D1F00DE483E /* MockItemListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemListTests.swift; sourceTree = "<group>"; };
+		908AF25923CC5D9600DE483E /* MockItemStorageMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemStorageMock.swift; sourceTree = "<group>"; };
+		908AF25B23CC5E1000DE483E /* MockItemServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItemServiceMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,9 +153,10 @@
 		908AF20A23C8A48600DE483E /* MockAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				908AF20B23C8A48600DE483E /* MockItemTests.swift */,
+				908AF25823CC5D7A00DE483E /* Mocks */,
 				908AF20D23C8A48600DE483E /* Info.plist */,
-				908AF21F23C92CE500DE483E /* MockData.swift */,
+				908AF20B23C8A48600DE483E /* MockItemTests.swift */,
+				908AF25623CC5D1F00DE483E /* MockItemListTests.swift */,
 			);
 			path = MockAppTests;
 			sourceTree = "<group>";
@@ -151,6 +164,7 @@
 		908AF21623C8A4BE00DE483E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				908AF25223CBB8ED00DE483E /* marlove.cer */,
 				908AF1FA23C8A48600DE483E /* Assets.xcassets */,
 				908AF1FF23C8A48600DE483E /* LaunchScreen.storyboard */,
 				908AF20223C8A48600DE483E /* Info.plist */,
@@ -177,6 +191,7 @@
 				908AF23523C9B29400DE483E /* Config.swift */,
 				908AF24123CB200100DE483E /* Container.swift */,
 				908AF24323CB292900DE483E /* UIColor+Theme.swift */,
+				908AF24E23CBB68B00DE483E /* PinningDelegate.swift */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -214,6 +229,7 @@
 				908AF1F823C8A48200DE483E /* MockItemsView.swift */,
 				908AF21B23C91F4900DE483E /* MockItemView.swift */,
 				908AF23F23CB1D9300DE483E /* NoDataError.swift */,
+				908AF25423CC55D300DE483E /* ErrorView.swift */,
 			);
 			path = MockItems;
 			sourceTree = "<group>";
@@ -225,6 +241,16 @@
 				908AF24A23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		908AF25823CC5D7A00DE483E /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				908AF21F23C92CE500DE483E /* MockData.swift */,
+				908AF25B23CC5E1000DE483E /* MockItemServiceMock.swift */,
+				908AF25923CC5D9600DE483E /* MockItemStorageMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +336,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				908AF20123C8A48600DE483E /* LaunchScreen.storyboard in Resources */,
+				908AF25323CBB8ED00DE483E /* marlove.cer in Resources */,
 				908AF1FE23C8A48600DE483E /* Preview Assets.xcassets in Resources */,
 				908AF1FB23C8A48600DE483E /* Assets.xcassets in Resources */,
 			);
@@ -355,7 +382,9 @@
 				908AF23A23CB159700DE483E /* MockItemList.swift in Sources */,
 				908AF22723C9344800DE483E /* NetworkSession.swift in Sources */,
 				908AF23623C9B29400DE483E /* Config.swift in Sources */,
+				908AF24F23CBB68B00DE483E /* PinningDelegate.swift in Sources */,
 				908AF24023CB1D9300DE483E /* NoDataError.swift in Sources */,
+				908AF25523CC55D300DE483E /* ErrorView.swift in Sources */,
 				908AF1F523C8A48200DE483E /* AppDelegate.swift in Sources */,
 				908AF24223CB200100DE483E /* Container.swift in Sources */,
 				908AF24B23CB47A600DE483E /* RandomAccessCollection+FirstItem.swift in Sources */,
@@ -379,8 +408,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				908AF25A23CC5D9600DE483E /* MockItemStorageMock.swift in Sources */,
+				908AF25723CC5D1F00DE483E /* MockItemListTests.swift in Sources */,
 				908AF20C23C8A48600DE483E /* MockItemTests.swift in Sources */,
 				908AF22023C92CE500DE483E /* MockData.swift in Sources */,
+				908AF25C23CC5E1000DE483E /* MockItemServiceMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

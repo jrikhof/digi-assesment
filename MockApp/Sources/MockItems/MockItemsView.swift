@@ -15,19 +15,24 @@ struct MockItemsView: View {
     var body: some View {
         GeometryReader { _ in
             NavigationView {
-                List(self.itemList.items) { item in
-                    VStack(alignment: HorizontalAlignment.leading) {
-                        if self.itemList.isLoading && self.itemList.items.isFirstItem(item) {
-                            Text("Loading..")
-                            Divider()
+                if self.itemList.error != nil {
+                    ErrorView(for: self.itemList.error!)
+                    .navigationBarTitle("Oops")
+                } else {
+                    List(self.itemList.items) { item in
+                        VStack(alignment: HorizontalAlignment.leading) {
+                            if self.itemList.isLoading && self.itemList.items.isFirstItem(item) {
+                                Text("Loading..")
+                                Divider()
+                            }
+                            
+                            MockItemView(item: .constant(item))
+                        }.onAppear {
+                            self.itemList.itemAppears(item)
                         }
-                        
-                        MockItemView(item: .constant(item))
-                    }.onAppear {
-                        self.itemList.itemAppears(item)
                     }
+                    .navigationBarTitle("List of items")
                 }
-                .navigationBarTitle("List of items")
             }.onAppear {
                 self.itemList.loadItems()
             }

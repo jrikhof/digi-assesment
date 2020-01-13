@@ -7,6 +7,7 @@
 //
 
 import Foundation
+@testable import MockApp
 
 // swiftlint:disable line_length
 
@@ -76,6 +77,39 @@ enum MockData {
         }
     ]
 """
+    
+    static let allItems: MockItems = [
+        MockItem(id: "30", text: "Item 30", confidence: 0.13, img: ""),
+        MockItem(id: "29", text: "Item 29", confidence: 0.89, img: ""),
+        MockItem(id: "28", text: "Item 28", confidence: 0.21, img: ""),
+        MockItem(id: "27", text: "Item 27", confidence: 0.06, img: ""),
+        MockItem(id: "26", text: "Item 26", confidence: 0.06, img: ""),
+        MockItem(id: "25", text: "Item 25", confidence: 0.63, img: ""),
+        MockItem(id: "24", text: "Item 24", confidence: 0.33, img: ""),
+        MockItem(id: "23", text: "Item 23", confidence: 0.23, img: ""),
+        MockItem(id: "22", text: "Item 22", confidence: 0.57, img: ""),
+        MockItem(id: "21", text: "Item 21", confidence: 0.76, img: ""),
+        MockItem(id: "20", text: "Item 20", confidence: 0.91, img: ""),
+        MockItem(id: "19", text: "Item 19", confidence: 0.64, img: ""),
+        MockItem(id: "18", text: "Item 18", confidence: 0.44, img: ""),
+        MockItem(id: "17", text: "Item 17", confidence: 0.76, img: ""),
+        MockItem(id: "16", text: "Item 16", confidence: 0.88, img: ""),
+        MockItem(id: "15", text: "Item 15", confidence: 0.40, img: ""),
+        MockItem(id: "14", text: "Item 14", confidence: 0.93, img: ""),
+        MockItem(id: "13", text: "Item 13", confidence: 0.35, img: ""),
+        MockItem(id: "12", text: "Item 12", confidence: 0.16, img: ""),
+        MockItem(id: "11", text: "Item 11", confidence: 0.32, img: ""),
+        MockItem(id: "10", text: "Item 10", confidence: 0.56, img: ""),
+        MockItem(id: "9", text: "Item 9", confidence: 0.76, img: ""),
+        MockItem(id: "8", text: "Item 8", confidence: 0.21, img: ""),
+        MockItem(id: "7", text: "Item 7", confidence: 0.52, img: ""),
+        MockItem(id: "6", text: "Item 6", confidence: 0.81, img: ""),
+        MockItem(id: "5", text: "Item 5", confidence: 0.39, img: ""),
+        MockItem(id: "4", text: "Item 4", confidence: 0.08, img: ""),
+        MockItem(id: "3", text: "Item 3", confidence: 0.95, img: ""),
+        MockItem(id: "2", text: "Item 2", confidence: 0.31, img: ""),
+        MockItem(id: "1", text: "Item 1", confidence: 0.07, img: "")
+    ]
 }
 
 // swiftlint:enable line_length

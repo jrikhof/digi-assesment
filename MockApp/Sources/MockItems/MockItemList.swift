@@ -98,7 +98,7 @@ final class MockItemList: ObservableObject {
         error = nil
         isLoading = true
         mockItemService.fetchMockItems(sinceId: sinceId) { [weak self] result in
-            // Add a little delay so the loading indicator is visible
+            // Add a little delay so the loading indicator is visible, should not be used in production
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self?.handleNewResult(result)
                 self?.isLoading = false

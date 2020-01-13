@@ -48,4 +48,3 @@ extension MockItem: Codable {
         try container.encode(img, forKey: .img)
     }
 }
-
